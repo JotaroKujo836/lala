@@ -1,0 +1,221 @@
+* {/*global setting for it to not have a space at the edge*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;/* smooth scrolling very yes doesnt work tho so idk the issue so far*/
+  scroll-padding-top: 20%; /*this is for uhhh spacing so that nav doesnt cover content that is to be seen yes*/
+}
+
+body {
+  font-family: Arial, sans-serif; /*very changeable font up to yall*/
+  background-color: #f4f4f4;
+  display: grid; /*goated grid*/
+  grid-template-columns: 22% 78%;
+  min-height: 100vh;
+}
+
+/*   HIGHLIGHT ANIMATION   */
+/*this is so that when u click nav link the section that u are directed to is highlighted*/
+@keyframes highlightFlash {
+  0% { background-color: #fff; box-shadow: 0 0 0% rgba(0, 0, 0, 0); }
+  50% { background-color: #E3D5CA; box-shadow: 0 0 8% 2% rgba(111, 78, 55, 0.6); }
+  100% { background-color: #fff; box-shadow: 0 0 0% rgba(0, 0, 0, 0); }
+}
+/*animation applied here very good very nice*/
+.card:target {
+  animation: highlightFlash 1.5s ease-in-out;
+  border-radius: 2%;
+}
+
+/*   SIDEBAR (Nav)   */
+/*made it sticky with top 0 left 0 and only 80 vh so that it dont bug out so that it stays while scrolling for convenience */
+.sidebar {
+  background-color: #6F4E37;
+  color: #fff;
+  padding: 5%;
+  height: 80vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 4%;
+  margin: 3% 0;
+  border-radius: 8%;
+  text-align: center;
+}
+/*cool hover thingy*/
+.sidebar a:hover {
+  background-color: #8B5E3C;
+}
+
+/*   MAIN CONTENT   */
+.main {
+  padding: 4%;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 3%;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2%;
+}
+/*for uniformity of the look and yea*/
+.card {
+  background: #fff;
+  padding: 3%;
+  border-radius: 2%;
+  box-shadow: 0 0.5% 2% rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 2%;
+  color: #6F4E37;
+}
+
+/*   INVENTORY GRID   */
+/*so that the thangs fit properly yur*/
+.Inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  gap: 2%;
+}
+
+.Inventory-item {
+  background-color: #E3D5CA;
+  border-radius: 2%;
+  padding: 5%;
+  text-align: center;
+}
+
+/*   TABLE   */
+/*collapsed broder so that it and bad lookin*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/*so that it all fits in the proper spaces and look alll nice*/
+th, td {
+  border: 1px solid #ccc;
+  padding: 2%;
+  text-align: center;
+  width: 2%;
+}
+
+th {
+  background-color: #eee;
+}
+
+/*   BUTTONS   */
+/*make em look noice and appropriate for the page itself*/
+.btn {
+  padding: 1.5% 3%;
+  border: none;
+  border-radius: 6%;
+  cursor: pointer;
+}
+/*matchy colors to their use and the page theme*/
+.btn-edit { background-color: #4CAF50; color: #fff; }
+.btn-delete { background-color: #f44336; color: #fff; }
+.btn-add { background-color: #6F4E37; color: #fff; margin-top: 2%; }
+
+/*   FORM   */
+input, select {
+  padding: 2%;
+  margin: 1% 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4%;
+}
+
+/*   RESPONSIVE   */
+@media only screen and (max-width: 900px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+  }
+
+  html {
+    scroll-padding: 25%;
+  }
+
+  /* sidebar turns into nav at the top so that it dont take up so much space while still retaining its original sticky position */
+  .sidebar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    gap: 1%;
+  }
+
+  .sidebar h2 {
+    grid-column: 1 / -1;
+    font-size: 120%;
+    margin-bottom: 2%;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 6%;
+    font-size: 90%;
+  }
+
+  .main {
+    margin-top: 4%;
+    padding: 5%;
+  }
+
+  .Inventory-grid {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    /*again adjusting the sidebar*/
+  .sidebar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sidebar h2 {
+    grid-column: 1 / -1;
+    font-size: 110%;
+  }
+
+  .sidebar a {
+    padding: 3%;
+    font-size: 85%;
+  }
+
+    .Inventory-grid {
+    grid-template-columns: 1fr;
+  }
+    /*makes it easier to read info within the prod list*/
+  th, td {
+    font-size: 90%;
+    padding: 3%;
+  }
+    /*button adjusted so that it is easier to click on a phone*/
+  .btn {
+    width: 80%;
+    margin: 1% auto;
+    display: block;
+  }
+}

@@ -1,0 +1,145 @@
+/* ---------- BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #5D8736;
+  color: #3e2723;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #F8F3D9;
+}
+
+.Logo {
+  width: 120px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #2b2b2b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #5D8736;
+}
+
+.intro-text {
+  text-align: center;
+  
+  color: #F8F3D9;
+  background-color: #3e2723;
+}
+/* ---------- DRINKS SECTION ---------- */
+.drinks-section {
+  padding: 100px 80px;
+}
+
+.drinks-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.drink-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 60px;
+}
+
+.drink-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.drink-image img {
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.drink-image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.drink-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.drink-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2b2b2b;
+}
+
+.drink-text p {
+  font-size: 1rem;
+  color: #e6e6e6;
+  line-height: 1.6;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  background-color: #504B38;
+  color: #F8F3D9;
+  padding: 25px 0;
+}
+
+footer a {
+  color: #F8F3D9;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #B9B28A;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .feature-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .drink-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .drink-row.reverse {
+    flex-direction: column;
+  }
+
+  .drink-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXDTzYh00.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;  
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url(Coffeeshop.jpg);
+    background-size: cover;        /* fills the screen while keeping proportions */
+    background-position: center; 
+    background-repeat: no-repeat;  /* prevents tiling */
+    background-attachment: fixed;  /*makes it stay still while scrolling */
+}
+
+div {
+  font-family: 'Playfair Display', serif;
+}
+@keyframes slidefade{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.loginbox{
+    background: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 50px;
+    width: 200px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: slidefade 1s ease forwards;
+}
+.login h2{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 100%;
+}
+.loginbox input{
+    width: 90%;
+    padding:15px;
+    border-radius: 5px;
+    margin: 30, 0;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    background: rgb(182, 181, 181);
+    transition: box-shadow 0.3s transform 0.3s;
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    color:  black ;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    
+}
+.loginbox input::placeholder{
+    color: rgba(0, 0, 0, 0.6);
+}
+.loginbox input:focus{
+    box-shadow: 0 0 10px #4762ff, 0 0 20px rgb(0, 0, 0); 
+    transform: scale(1.05);
+}
+.loginbox input:hover{
+     transform: scale(1.05);
+}
+.loginbox button{
+    width: 70%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgb(0, 74, 77) );
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.loginbox button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgb(255, 255, 255 0.5);
+}
+.error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
